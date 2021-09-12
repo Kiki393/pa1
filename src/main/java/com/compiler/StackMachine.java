@@ -1,11 +1,6 @@
 package com.compiler;
 
 import java.util.*;
-
-/**
- * 
- *
- */
 public class StackMachine<E> {
     static int value;
     static String input;
@@ -27,6 +22,7 @@ public class StackMachine<E> {
             input = keyboard.nextLine();
 
             if (input.equals("+")) {
+            
                 if (!stc.isEmpty()) {
                     int tempNum1 = stc.pop();
                     int tempNum2 = stc.pop();
@@ -38,6 +34,7 @@ public class StackMachine<E> {
                     System.out.println("The stack is empty");
                     return;
                 }
+
                 System.out.println();
                 stc.display();
 
@@ -49,7 +46,7 @@ public class StackMachine<E> {
             
         }while(!input.equals("x"));
         
-        System.out.println();
+        System.out.println("Exited");
         stc.display();
 
         keyboard.close();
