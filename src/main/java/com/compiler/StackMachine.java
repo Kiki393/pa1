@@ -39,14 +39,15 @@ public class StackMachine<E> {
                 stc.display();
 
             }
-              else{
+            else if (Character.isDigit(input.charAt(0))) {
                 value = Integer.parseInt(input);
                 stc.push(value);
             }
             
+            
         }while(!input.equals("x"));
         
-        System.out.println("Exited");
+        System.out.println("\nExited");
         stc.display();
 
         keyboard.close();
