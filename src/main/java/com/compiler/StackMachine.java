@@ -64,7 +64,7 @@ public class StackMachine<E> {
             }
             else if (input.equals("e")) {
                 int sum = 0;
-                for (int i = 0; i <= stc.size; i++) {
+                for (int i = 0; i <= stc.size + 1; i++) {
                     sum = sum + stc.pop();
                 }
                 System.out.println("\nThe total sum of values in the stack is: " + sum);
