@@ -30,20 +30,6 @@ public class StackCommands<E>{
     }
 
     /**
-     * Returns the element at the top of the stack
-     * 
-     * @return
-     */
-    public E peek() {
-        if (isEmpty()) {
-            System.out.println("The stack is empty");
-            return null;
-        } else {
-            return top.data;
-        }
-    }
-
-    /**
      * Insert an element at the top of the stack.
      * 
      * @param data
