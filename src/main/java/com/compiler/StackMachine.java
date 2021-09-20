@@ -45,7 +45,7 @@ public class StackMachine<E> {
                 stc.display();
             }   
             else if (input.equals("d")) {
-                    System.out.println("\nThe contents of the stack is:");
+                    System.out.println("\nThe contents of the stack are:");
                     stc.display();
                     System.out.println();
             }
