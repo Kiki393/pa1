@@ -54,8 +54,10 @@ public class StackMachine<E> {
                     int tempNum1 = stc.pop();
                     int tempNum2 = stc.pop();
 
-                    stc.push(tempNum2);
                     stc.push(tempNum1);
+                    stc.push(tempNum2);
+
+                    stc.display();
                 }  
                 else{
                     System.out.println("The stack is empty");
