@@ -16,8 +16,7 @@ public class StackMachine<E> {
 
         System.out.println("\nWelcome to the Stack Machine.");
         System.out.println("Commands: \n1) Enter 'x' to stop. \n2) Enter 'd' to display the contents of the stack." + 
-        "\n3) Enter '+' to sum the first two integer values. \n4) Enter 's' to swap the first two integer values. \n5) Enter 'e' to evaluate the stack." +
-        "NOTE: This will remove all elements from the stack and sum them.");
+        "\n3) Enter '+' to sum the first two integer values. \n4) Enter 's' to swap the first two integer values. \n5) Enter 'e' to evaluate the stack.");
         System.out.println("\nEnter values to add to the stack machine.");
 
         // Exucute while the user has not entered 'x'
