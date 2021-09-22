@@ -20,6 +20,7 @@ public class StackMachine<E> {
         "NOTE: This will remove all elements from the stack and sum them.");
         System.out.println("\nEnter values to add to the stack machine.");
 
+        // Exucute while the user has not entered 'x'
         do{
             System.out.print("> ");
             input = keyboard.nextLine();
@@ -44,12 +45,12 @@ public class StackMachine<E> {
                 System.out.println();
                 stc.display();
             }   
-            else if (input.equals("d")) {
+            else if (input.equals("d")) { // Displaying the contents of the stack
                     System.out.println("\nThe contents of the stack are:");
                     stc.display();
                     System.out.println();
             }
-            else if (input.equals("s")) {
+            else if (input.equals("s")) { // Swapping the the elements at the top of the stack
                 if (!stc.isEmpty()) {
                     int tempNum1 = stc.pop();
                     int tempNum2 = stc.pop();
@@ -63,11 +64,21 @@ public class StackMachine<E> {
                     System.out.println("The stack is empty");
                 }
             }
-            else if (input.equals("e")) {
+            else if (input.equals("e")) { // Evaluating the elements in the stack
                 int sum = 0;
-                for (int i = 0; i <= stc.size + 1; i++) {
-                    sum = sum + stc.pop();
-                }
+                Queue<Integer> queue = new LinkedList<>(); // Creating a linked list to hold the values in the stack
+
+                while (!stc.isEmpty()) {
+                    int value = stc.pop();
+                    sum += value;
+                    queue.add(value);
+                    }
+
+                    // The queue reverses the order of the values  
+                    queueToStack(queue, stc); // Move values to stack 
+                    stackToQueue(stc, queue); // Values are now in reverse order from the stack
+                    queueToStack(queue, stc); // Queue back to the stack to arrange values in the correct order
+
                 System.out.println("\nThe total sum of values in the stack is: " + sum);
             }
         }while(!input.equals("x"));
@@ -75,5 +86,19 @@ public class StackMachine<E> {
         System.out.println("\nStack exited");
         
         keyboard.close();
+    }
+
+    // Converting the existing stack to a queue 
+    private static void stackToQueue(StackCommands<Integer> stc, Queue<Integer> queue) {
+        while (!stc.isEmpty()) {
+            queue.add(stc.pop());
+        }
+    }
+
+    // Moving the elements in the queue back into the stack
+    private static void queueToStack(Queue<Integer> queue, StackCommands<Integer> stc) {
+        while (!queue.isEmpty()) {
+            stc.push(queue.remove());
+        }
     }
 }
