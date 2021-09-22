@@ -67,7 +67,7 @@ public class StackMachine<E> {
                 int sum = 0;
                 Queue<Integer> queue = new LinkedList<>(); // Creating a linked list to hold the values in the stack
 
-                while (!stc.isEmpty()) {
+                while (!stc.isEmpty()) { // While the stack is not empty, remove the value from the stack, sum then send the value that was removed from the stack to the queue
                     int value = stc.pop();
                     sum += value;
                     queue.add(value);
