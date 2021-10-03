@@ -57,6 +57,7 @@ public class StackMachine<E> {
                     stc.push(tempNum1);
                     stc.push(tempNum2);
 
+                    System.out.println("\nThe contents of the stack are:");
                     stc.display();
                 }  
                 else{
